@@ -14,6 +14,14 @@ class Setup {
 	public function __construct() {
 		add_action( 'admin_enqueue_scripts', array( $this, 'register_scripts' ) );
 		add_action( 'admin_menu', array( $this, 'register_page' ) );
+		add_filter( 'woocommerce_get_settings_pages', array( $this, 'add_setting_pages' ) );
+	}
+
+	public function add_setting_pages( $settings ) {
+
+		$settings[] = include __DIR__ . '/Settings/Settings.php';
+
+		return $settings;
 	}
 
 	/**
