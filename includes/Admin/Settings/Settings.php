@@ -146,6 +146,20 @@ class ST_Settings extends WC_Settings_Page {
 				'type'     => 'checkbox',
             ),
 			array(
+				'title'    => __( 'DOMContentLoaded script', 'settings-tester' ),
+				'desc'     => __( 'External javascript using DOMContentLoaded event', 'settings-tester' ),
+				'id'       => 'settings_tester_domready_javascript',
+				'default'  => 'no',
+				'type'     => 'checkbox',
+			),
+			array(
+				'title'    => __( 'jQuery Ready script', 'settings-tester' ),
+				'desc'     => __( 'External javascript using jQuery ready function', 'settings-tester' ),
+				'id'       => 'settings_tester_jquery_ready_javascript',
+				'default'  => 'no',
+				'type'     => 'checkbox',
+			),
+			array(
 				'type' => 'sectionend',
 				'id'   => 'settings_tester_js_settings',
 			),

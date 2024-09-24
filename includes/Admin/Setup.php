@@ -26,10 +26,26 @@ class Setup {
 			'1.0.0', 
 			true 
 		);
-		
+
 		wp_enqueue_script( 
 			'settings-tester-jquery', 
 			plugins_url( '/includes/Admin/Settings/Javascript/jquery.js', MAIN_PLUGIN_FILE ), 
+			array( 'jquery' ), 
+			'1.0.0', 
+			true 
+		);
+
+		wp_enqueue_script( 
+			'settings-tester-domready', 
+			plugins_url( '/includes/Admin/Settings/Javascript/domready.js', MAIN_PLUGIN_FILE ), 
+			array(), 
+			'1.0.0', 
+			true 
+		);
+
+		wp_enqueue_script( 
+			'settings-tester-jquery-ready', 
+			plugins_url( '/includes/Admin/Settings/Javascript/jquery-ready.js', MAIN_PLUGIN_FILE ), 
 			array( 'jquery' ), 
 			'1.0.0', 
 			true 
