@@ -128,7 +128,7 @@ class ST_Settings extends WC_Settings_Page {
 			array(
 				'title' => __( 'Javascript Settings', 'settings-tester' ),
 				'type'  => 'title',
-				'desc'  => __( 'Execute Javascript from external script.', 'settings-tester' ),
+				'desc'  => __( 'Execute Javascript from external script. The label will change color when the checkbox is checked.', 'settings-tester' ),
 				'id'    => 'settings_tester_js_settings',
 			),
 			array(

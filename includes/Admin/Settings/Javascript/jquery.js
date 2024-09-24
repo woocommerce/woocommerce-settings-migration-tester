@@ -1,8 +1,6 @@
 ( function ( $ ) {
 	const $jqueryCheckbox = $( '#settings_tester_jquery_javascript' );
 
-	console.log( $jqueryCheckbox );
-
 	if ( $jqueryCheckbox.length ) {
 		$jqueryCheckbox.on( 'change', function () {
 			if ( $( this ).is( ':checked' ) ) {
