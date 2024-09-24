@@ -32,14 +32,16 @@ class ST_Settings extends WC_Settings_Page {
 	 */
 	public function get_sections() {
 		$sections = array(
-			''             => __( 'Components', 'settings-tester' ),
-			'custom-views' => __( 'Custom Views', 'settings-tester' ),
-			'javascript'   => __( 'JavaScript', 'settings-tester' ),
-			'slotfill'     => __( 'Slotfill', 'settings-tester' ),
-			'save-hooks'   => __( 'Save Hooks', 'settings-tester' ),
+			''                => __( 'Components', 'settings-tester' ),
+			'custom-views'    => __( 'Custom Views', 'settings-tester' ),
+			'javascript'      => __( 'Javascript', 'settings-tester' ),
+			'slotfill'        => __( 'Slotfill', 'settings-tester' ),
+			'conditionals'    => __( 'Conditional Views', 'settings-tester' ),
+			'save-hooks'      => __( 'Save Hooks', 'settings-tester' ),
+			'modern-screens'  => __( 'Modern Screens', 'settings-tester' ),
 		);
 
-		return apply_filters( 'settings_tester_get_sections_' . $this->id, $sections );
+		return $sections;
 	}
 
 	/**
@@ -114,6 +116,42 @@ class ST_Settings extends WC_Settings_Page {
         );
 
 		return apply_filters( 'settings_tester_get_settings_' . $this->id, $settings );
+	}
+
+	/**
+	 * Get settings for the JavaScript section.
+	 *
+	 * @return array
+	 */
+	public function get_settings_for_javascript_section() {
+		$settings = array(
+			array(
+				'title' => __( 'Javascript Settings', 'settings-tester' ),
+				'type'  => 'title',
+				'desc'  => __( 'Execute Javascript from external script.', 'settings-tester' ),
+				'id'    => 'settings_tester_js_settings',
+			),
+			array(
+				'title'    => __( 'Plain javascript', 'settings-tester' ),
+				'desc'     => __( 'External javascript wrapped in self-invoking function', 'settings-tester' ),
+				'id'       => 'settings_tester_plain_javascript',
+				'default'  => 'no',
+				'type'     => 'checkbox',
+            ),
+			array(
+				'title'    => __( 'jQuery script', 'settings-tester' ),
+				'desc'     => __( 'External javascript using jQuery', 'settings-tester' ),
+				'id'       => 'settings_tester_jquery_javascript',
+				'default'  => 'no',
+				'type'     => 'checkbox',
+            ),
+			array(
+				'type' => 'sectionend',
+				'id'   => 'settings_tester_js_settings',
+			),
+		);
+
+		return $settings;
 	}
 
 	/**
