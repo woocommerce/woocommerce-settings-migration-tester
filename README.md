@@ -23,7 +23,7 @@ Below are checklists for each way an extension can add functionality to WooComme
 -   [ ] month
 -   [ ] time
 -   [ ] week
--   [ ] number
+-   [x] number
 -   [ ] email
 -   [ ] url
 -   [ ] tel
@@ -31,7 +31,7 @@ Below are checklists for each way an extension can add functionality to WooComme
 -   [ ] textarea
 -   [ ] select
 -   [ ] multiselect
--   [x] radio
+-   [ ] radio
 -   [x] checkbox
 -   [ ] image_width
 -   [ ] single_select_page
