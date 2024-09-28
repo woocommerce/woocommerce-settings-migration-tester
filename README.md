@@ -2,7 +2,7 @@
 
 A companion plugin to test Reactification of WooCommerce Settings. This plugin includes all known possible integration methods for adding UI|UX elements to WooCommerce settings. The integration methods are intentionally stripped down for testing purposes.
 
-Integration for Modern screens is also included.
+A summary of the [known issues](KNOWN-ISSUES.md) is used to keep track of problems with existing integration techniques.
 
 See [Settings implementation](https://github.com/woocommerce/woocommerce/pull/48340) in Core WooCommerce.
 
@@ -51,6 +51,7 @@ Below are checklists for each way an extension can add functionality to WooComme
 -   [x] jQuery to interact with the DOM.
 -   [x] Use of `document.addEventListener( 'DOMContentLoaded', () => { ... } )` to bind JS to the DOM.
 -   [x] Use of `jQuery.ready()` to bind JS to the DOM.
+-   [ ] Echoing HTML with `<script>` tags to output JS that interacts with the DOM.
 
 ### SlotFill
 
