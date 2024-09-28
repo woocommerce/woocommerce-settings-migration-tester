@@ -2,7 +2,7 @@
 
 A companion plugin to test Reactification of WooCommerce Settings. This plugin includes all known possible integration methods for adding UI|UX elements to WooCommerce settings. The integration methods are intentionally stripped down for testing purposes.
 
-A summary of the [known issues](KNOWN-ISSUES.md) is used to keep track of problems with existing integration techniques.
+A summary of the [known issues](KNOWN_ISSUES.md) is used to keep track of problems with existing integration techniques.
 
 See [Settings implementation](https://github.com/woocommerce/woocommerce/pull/48340) in Core WooCommerce.
 
