@@ -246,6 +246,23 @@ class ST_Settings extends WC_Settings_Page {
 		}
 	}
 
+	public function get_settings_for_slotfill_section() {
+		$settings = array(
+			array(
+				'title' => __( 'Slotfill Settings', 'settings-tester' ),
+				'type'  => 'title',
+				'desc'  => __( 'Slotfill insertion points.', 'settings-tester' ),
+				'id'    => 'settings_tester_slotfill_settings',
+			),
+			array(
+				'type' => 'slotfill_placeholder',
+				'id'   => 'settings_tester_slotfill_placeholder',
+			),
+		);
+		
+		return $settings;
+	}
+
 	/**
 	 * Save settings.
 	 */

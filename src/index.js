@@ -11,6 +11,7 @@ import { Fragment } from '@wordpress/element';
  * Internal dependencies
  */
 import './index.scss';
+import './slotFill';
 
 const MyExamplePage = () => (
 	<Fragment>
