@@ -7,20 +7,20 @@
 
 defined( 'ABSPATH' ) || exit;
 
-if ( class_exists( 'ST_Settings', false ) ) {
-	return new ST_Settings();
+if ( class_exists( 'ST_Legacy_Settings', false ) ) {
+	return new ST_Legacy_Settings();
 }
 
 /**
  * WC_Admin_Settings_General.
  */
-class ST_Settings extends WC_Settings_Page {
+class ST_Legacy_Settings extends WC_Settings_Page {
 	/**
 	 * Constructor.
 	 */
 	public function __construct() {
 		$this->id    = 'settings-tester';
-		$this->label = __( 'Settings Tester', 'settings-tester' );
+		$this->label = __( 'Legacy Settings', 'settings-tester' );
 
 		add_action( 'woocommerce_admin_field_custom_view_type', array( $this, 'render_custom_view_type' ) );
 

@@ -53,8 +53,8 @@ class Setup {
 
 	public function add_setting_pages( $settings ) {
 
-		$settings[] = include __DIR__ . '/Settings/Settings.php';
-		$settings[] = include __DIR__ . '/Settings/ModernScreen.php';
+		$settings[] = include __DIR__ . '/Settings/LegacySettings.php';
+		$settings[] = include __DIR__ . '/Settings/ModernSettings.php';
 
 		return $settings;
 	}

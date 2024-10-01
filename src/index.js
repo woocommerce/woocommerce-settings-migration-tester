@@ -11,10 +11,10 @@ import { Link } from '@woocommerce/components';
 import './index.scss';
 import './slotFill';
 
-export const MyExample = ( { section } ) => {
+export const ModernScreen = ( { section } ) => {
 	return (
 		<>
-			<h2>My Example: { section }</h2>
+			<h2>Selected section: { section }</h2>
 			<Link href={ getNewPath( { quickEdit: true } ) } type="wc-admin">
 				Edit
 			</Link>
@@ -22,10 +22,10 @@ export const MyExample = ( { section } ) => {
 	);
 };
 
-export const MyExampleEdit = () => {
+export const ModernScreenEdit = () => {
 	return (
 		<div style={ { padding: '16px 48px' } }>
-			<h2>My Example Edit</h2>
+			<h2>Modern Screen Edit</h2>
 			<Link href={ getNewPath( { quickEdit: false } ) } type="wc-admin">
 				Close
 			</Link>
@@ -38,8 +38,8 @@ addFilter( 'woocommerce_admin_settings_pages', 'woocommerce', ( pages ) => {
 
 	pages[ 'settings-tester-modern-screen' ] = {
 		areas: {
-			content: <MyExample section={ section } />,
-			edit: <MyExampleEdit />,
+			content: <ModernScreen section={ section } />,
+			edit: <ModernScreenEdit />,
 		},
 		widths: {
 			content: undefined,

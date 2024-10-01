@@ -4,7 +4,7 @@
 import { createRoot } from '@wordpress/element';
 
 const App = () => {
-	return <p>This is a fill created by settings-tester</p>;
+	return <p>This is a fill created by Settings Tester</p>;
 };
 
 const slotDomElement = document.getElementById(

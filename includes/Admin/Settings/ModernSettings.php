@@ -2,13 +2,13 @@
 /**
  * Modern Screen.
  */
-class ST_Settings_ModernScreen extends WC_Settings_Page {
+class ST_Modern_Settings extends WC_Settings_Page {
 	/**
 	 * Constructor.
 	 */
 	public function __construct() {
 		$this->id = 'settings-tester-modern-screen';
-		$this->label = __( 'Modern Screen', 'settings-tester' );
+		$this->label = __( 'Modern Settings', 'settings-tester' );
 		$this->is_modern = true;
 
 		parent::__construct();
@@ -23,4 +23,4 @@ class ST_Settings_ModernScreen extends WC_Settings_Page {
     }
 }
 
-return new ST_Settings_ModernScreen();
+return new ST_Modern_Settings();
