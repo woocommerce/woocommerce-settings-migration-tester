@@ -2,10 +2,8 @@
  * External dependencies
  */
 import { addFilter } from '@wordpress/hooks';
-import { __ } from '@wordpress/i18n';
-import { Dropdown } from '@wordpress/components';
-import * as Woo from '@woocommerce/components';
-import { Fragment } from '@wordpress/element';
+import { getNewPath, useSettingsLocation } from '@woocommerce/navigation';
+import { Link } from '@woocommerce/components';
 
 /**
  * Internal dependencies
@@ -13,69 +11,40 @@ import { Fragment } from '@wordpress/element';
 import './index.scss';
 import './slotFill';
 
-const MyExamplePage = () => (
-	<Fragment>
-		<Woo.Section component="article">
-			<Woo.SectionHeader title={ __( 'Search', 'settings-tester' ) } />
-			<Woo.Search
-				type="products"
-				placeholder="Search for something"
-				selected={ [] }
-				onChange={ ( items ) => setInlineSelect( items ) }
-				inlineTags
-			/>
-		</Woo.Section>
+export const MyExample = ( { section } ) => {
+	return (
+		<>
+			<h2>My Example: { section }</h2>
+			<Link href={ getNewPath( { quickEdit: true } ) } type="wc-admin">
+				Edit
+			</Link>
+		</>
+	);
+};
 
-		<Woo.Section component="article">
-			<Woo.SectionHeader title={ __( 'Dropdown', 'settings-tester' ) } />
-			<Dropdown
-				renderToggle={ ( { isOpen, onToggle } ) => (
-					<Woo.DropdownButton
-						onClick={ onToggle }
-						isOpen={ isOpen }
-						labels={ [ 'Dropdown' ] }
-					/>
-				) }
-				renderContent={ () => <p>Dropdown content here</p> }
-			/>
-		</Woo.Section>
+export const MyExampleEdit = () => {
+	return (
+		<div style={ { padding: '16px 48px' } }>
+			<h2>My Example Edit</h2>
+			<Link href={ getNewPath( { quickEdit: false } ) } type="wc-admin">
+				Close
+			</Link>
+		</div>
+	);
+};
 
-		<Woo.Section component="article">
-			<Woo.SectionHeader
-				title={ __( 'Pill shaped container', 'settings-tester' ) }
-			/>
-			<Woo.Pill className={ 'pill' }>
-				{ __( 'Pill Shape Container', 'settings-tester' ) }
-			</Woo.Pill>
-		</Woo.Section>
+addFilter( 'woocommerce_admin_settings_pages', 'woocommerce', ( pages ) => {
+	const { section } = useSettingsLocation();
 
-		<Woo.Section component="article">
-			<Woo.SectionHeader title={ __( 'Spinner', 'settings-tester' ) } />
-			<Woo.H>I am a spinner!</Woo.H>
-			<Woo.Spinner />
-		</Woo.Section>
-
-		<Woo.Section component="article">
-			<Woo.SectionHeader
-				title={ __( 'Datepicker', 'settings-tester' ) }
-			/>
-			<Woo.DatePicker
-				text={ __( 'I am a datepicker!', 'settings-tester' ) }
-				dateFormat={ 'MM/DD/YYYY' }
-			/>
-		</Woo.Section>
-	</Fragment>
-);
-
-addFilter( 'woocommerce_admin_pages_list', 'settings-tester', ( pages ) => {
-	pages.push( {
-		container: MyExamplePage,
-		path: '/settings-tester',
-		breadcrumbs: [ __( 'Settings Tester', 'settings-tester' ) ],
-		navArgs: {
-			id: 'settings_tester',
+	pages[ 'settings-tester-modern-screen' ] = {
+		areas: {
+			content: <MyExample section={ section } />,
+			edit: <MyExampleEdit />,
 		},
-	} );
-
+		widths: {
+			content: undefined,
+			edit: 380,
+		},
+	};
 	return pages;
 } );

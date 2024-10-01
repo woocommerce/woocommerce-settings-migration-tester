@@ -57,10 +57,6 @@ Below are checklists for each way an extension can add functionality to WooComme
 
 -   [x] Use of SlotFill for rendering React components making use of Gutenberg context.
 
-### Conditional Rendering
-
--   [x] Use of arbitrary query parameters to conditionally render a view.
-
 ### Save hooks
 
 More research is required to determine how hooks are being used when settings are saved.

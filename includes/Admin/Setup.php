@@ -13,7 +13,6 @@ class Setup {
 	 */
 	public function __construct() {
 		add_action( 'admin_enqueue_scripts', array( $this, 'register_scripts' ) );
-		add_action( 'admin_menu', array( $this, 'register_page' ) );
 		add_filter( 'woocommerce_get_settings_pages', array( $this, 'add_setting_pages' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_javascript' ) );
 	}
@@ -55,6 +54,7 @@ class Setup {
 	public function add_setting_pages( $settings ) {
 
 		$settings[] = include __DIR__ . '/Settings/Settings.php';
+		$settings[] = include __DIR__ . '/Settings/ModernScreen.php';
 
 		return $settings;
 	}
@@ -99,26 +99,5 @@ class Setup {
 
 		wp_enqueue_script( 'settings-tester' );
 		wp_enqueue_style( 'settings-tester' );
-	}
-
-	/**
-	 * Register page in wc-admin.
-	 *
-	 * @since 1.0.0
-	 */
-	public function register_page() {
-
-		if ( ! function_exists( 'wc_admin_register_page' ) ) {
-			return;
-		}
-
-		wc_admin_register_page(
-			array(
-				'id'     => 'settings_tester-example-page',
-				'title'  => __( 'Settings Tester', 'settings_tester' ),
-				'parent' => 'woocommerce',
-				'path'   => '/settings-tester',
-			)
-		);
 	}
 }

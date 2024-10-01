@@ -38,9 +38,7 @@ class ST_Settings extends WC_Settings_Page {
 			'custom_views'    => __( 'Custom Views', 'settings-tester' ),
 			'javascript'      => __( 'Javascript', 'settings-tester' ),
 			'slotfill'        => __( 'Slotfill', 'settings-tester' ),
-			'conditionals'    => __( 'Conditional Views', 'settings-tester' ),
 			'save-hooks'      => __( 'Save Hooks', 'settings-tester' ),
-			'modern-screens'  => __( 'Modern Screens', 'settings-tester' ),
 		);
 
 		return $sections;
