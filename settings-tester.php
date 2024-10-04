@@ -65,9 +65,7 @@ if ( ! class_exists( 'settings_tester' ) ) :
 		 * Constructor.
 		 */
 		public function __construct() {
-			if ( is_admin() ) {
-				new Setup();
-			}
+			new Setup();
 		}
 
 		/**

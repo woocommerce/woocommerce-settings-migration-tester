@@ -260,12 +260,4 @@ class ST_Legacy_Settings extends WC_Settings_Page {
 		
 		return $settings;
 	}
-
-	/**
-	 * Save settings.
-	 */
-	public function save() {
-		$settings = $this->get_settings( $this->get_current_section() );
-		WC_Admin_Settings::save_fields( $settings );
-	}
 }
