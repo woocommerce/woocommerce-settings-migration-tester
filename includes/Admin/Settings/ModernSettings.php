@@ -4,6 +4,13 @@
  */
 class ST_Modern_Settings extends WC_Settings_Page {
 	/**
+	 * Icon.
+	 *
+	 * @var string
+	 */
+	public $icon = 'published';
+
+	/**
 	 * Constructor.
 	 */
 	public function __construct() {
