@@ -21,10 +21,11 @@ export const ModernScreen = ( { section } ) => {
 
 addFilter( 'woocommerce_admin_settings_pages', 'woocommerce', ( pages ) => {
 	const currentArgs = getQueryArgs( window.location.href );
+	const section = currentArgs.section ? currentArgs.section : 'mammals';
 
 	pages[ 'settings-tester-modern-screen' ] = {
 		areas: {
-			content: <ModernScreen section={ currentArgs.section } />,
+			content: <ModernScreen section={ section } />,
 			edit: null,
 		},
 		widths: {
