@@ -2,6 +2,7 @@
  * External dependencies
  */
 import { addFilter } from '@wordpress/hooks';
+import { getQueryArgs } from '@wordpress/url';
 
 /**
  * Internal dependencies
@@ -9,18 +10,21 @@ import { addFilter } from '@wordpress/hooks';
 import './index.scss';
 import './slotFill';
 
-export const ModernScreen = () => {
+export const ModernScreen = ( { section } ) => {
 	return (
 		<>
 			<h2>This is a modern screen</h2>
+			<p>Section: { section }</p>
 		</>
 	);
 };
 
 addFilter( 'woocommerce_admin_settings_pages', 'woocommerce', ( pages ) => {
+	const currentArgs = getQueryArgs( window.location.href );
+
 	pages[ 'settings-tester-modern-screen' ] = {
 		areas: {
-			content: <ModernScreen />,
+			content: <ModernScreen section={ currentArgs.section } />,
 			edit: null,
 		},
 		widths: {
