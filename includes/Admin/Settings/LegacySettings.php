@@ -33,6 +33,10 @@ class ST_Legacy_Settings extends WC_Settings_Page {
 			$this->render_custom_view( 'woocommerce_before_settings_shipping' );
 		} );
 
+		add_action( 'woocommerce_after_settings_shipping', function() {
+			$this->render_custom_view( 'woocommerce_after_settings_shipping' );
+		} );
+
 		parent::__construct();
 	}
 
