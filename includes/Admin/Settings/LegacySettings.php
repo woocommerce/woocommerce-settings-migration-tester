@@ -22,32 +22,34 @@ class ST_Legacy_Settings extends WC_Settings_Page {
 		$this->id    = 'settings-tester';
 		$this->label = __( 'Legacy Settings', 'settings-tester' );
 
-		add_action( 'woocommerce_admin_field_custom_view_type', function() {
-			$this->render_custom_view( 'woocommerce_admin_field_custom_view_type' );
-		} );
-		add_action( 'woocommerce_settings_start', function() {
-			$this->render_custom_view( 'woocommerce_settings_start' );
-		} );
+		// These hooks are commented out because they should be included as Code Snippets for testing.
 
-		add_action( 'woocommerce_before_settings_products', function() {
-			$this->render_custom_view( 'woocommerce_before_settings_products' );
-		} );
+		// add_action( 'woocommerce_admin_field_custom_view_type', function() {
+		// 	$this->render_custom_view( 'woocommerce_admin_field_custom_view_type' );
+		// } );
+		// add_action( 'woocommerce_settings_start', function() {
+		// 	$this->render_custom_view( 'woocommerce_settings_start' );
+		// } );
 
-		add_action( 'woocommerce_after_settings_products', function() {
-			$this->render_custom_view( 'woocommerce_after_settings_products' );
-		} );
+		// add_action( 'woocommerce_before_settings_products', function() {
+		// 	$this->render_custom_view( 'woocommerce_before_settings_products' );
+		// } );
 
-		add_action( 'woocommerce_settings_settings_tester_general_options_end', function() {
-			$this->render_custom_view( 'woocommerce_settings_settings_tester_general_options_end' );
-		} );
+		// add_action( 'woocommerce_after_settings_products', function() {
+		// 	$this->render_custom_view( 'woocommerce_after_settings_products' );
+		// } );
 
-		add_action( 'woocommerce_settings_settings_tester_general_options_after', function() {
-			$this->render_custom_view( 'woocommerce_settings_settings_tester_general_options_after' );
-		} );
+		// add_action( 'woocommerce_settings_settings_tester_general_options_end', function() {
+		// 	$this->render_custom_view( 'woocommerce_settings_settings_tester_general_options_end' );
+		// } );
 
-		add_action( 'woocommerce_settings_settings_tester_general_options', function() {
-			$this->render_custom_view( 'woocommerce_settings_settings_tester_general_options' );
-		} );
+		// add_action( 'woocommerce_settings_settings_tester_general_options_after', function() {
+		// 	$this->render_custom_view( 'woocommerce_settings_settings_tester_general_options_after' );
+		// } );
+
+		// add_action( 'woocommerce_settings_settings_tester_general_options', function() {
+		// 	$this->render_custom_view( 'woocommerce_settings_settings_tester_general_options' );
+		// } );
 
 		parent::__construct();
 	}
