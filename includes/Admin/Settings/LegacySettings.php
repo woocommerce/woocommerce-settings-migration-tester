@@ -37,6 +37,14 @@ class ST_Legacy_Settings extends WC_Settings_Page {
 			$this->render_custom_view( 'woocommerce_after_settings_products' );
 		} );
 
+		add_action( 'woocommerce_settings_settings_tester_general_options_end', function() {
+			$this->render_custom_view( 'woocommerce_settings_settings_tester_general_options_end' );
+		} );
+
+		add_action( 'woocommerce_settings_settings_tester_general_options_after', function() {
+			$this->render_custom_view( 'woocommerce_settings_settings_tester_general_options_after' );
+		} );
+
 		parent::__construct();
 	}
 
