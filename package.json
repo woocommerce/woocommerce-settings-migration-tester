@@ -14,6 +14,16 @@
 		"start": "wp-scripts start",
 		"postinstall": "composer install"
 	},
+	"files": [
+		"vendor",
+		"build",
+		"block.json",
+		"includes",
+		"languages",
+		"package.json",
+		"README.md",
+		"settings-tester.php"
+	],
 	"dependencies": {
 		"@wordpress/hooks": "^4.8.0",
 		"@wordpress/i18n": "^5.8.0"
