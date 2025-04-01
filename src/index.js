@@ -20,7 +20,7 @@ export const ModernScreen = ( { section } ) => {
 	);
 };
 
-addFilter( 'woocommerce_admin_settings_pages', 'woocommerce', ( pages ) => {
+addFilter( 'woocommerce_admin_settings_routes', 'woocommerce', ( pages ) => {
 	const currentArgs = getQueryArgs( window.location.href );
 	const section = currentArgs.section ? currentArgs.section : 'mammals';
 	const backPath = addQueryArgs( 'wc-settings', {} );
