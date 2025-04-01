@@ -65,9 +65,10 @@ class Setup {
 	 * @since 1.0.0
 	 */
 	public function register_scripts() {
-		if ( ! method_exists( 'Automattic\WooCommerce\Admin\PageController', 'is_admin_or_embed_page' ) ||
-		! \Automattic\WooCommerce\Admin\PageController::is_admin_or_embed_page()
-		) {
+		error_log('register_scripts called on page: ' . $_SERVER['REQUEST_URI']);
+
+		// Only load on WooCommerce admin pages
+		if ( !is_admin() || ! class_exists( 'WooCommerce' ) ) {
 			return;
 		}
 
@@ -81,10 +82,13 @@ class Setup {
 		);
 		$script_url        = plugins_url( $script_path, MAIN_PLUGIN_FILE );
 
+		error_log('Registering script with URL: ' . $script_url);
+		error_log('Script dependencies: ' . print_r($script_asset['dependencies'], true));
+
 		wp_register_script(
 			'settings-tester',
 			$script_url,
-			$script_asset['dependencies'],
+			array_merge( $script_asset['dependencies'], array( 'wc-settings-editor' ) ),
 			$script_asset['version'],
 			true
 		);
@@ -92,7 +96,6 @@ class Setup {
 		wp_register_style(
 			'settings-tester',
 			plugins_url( '/build/index.css', MAIN_PLUGIN_FILE ),
-			// Add any dependencies styles may have, such as wp-components.
 			array(),
 			filemtime( dirname( MAIN_PLUGIN_FILE ) . '/build/index.css' )
 		);
