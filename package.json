@@ -25,12 +25,14 @@
 		"settings-tester.php"
 	],
 	"dependencies": {
+		"@automattic/site-admin": "^0.0.1",
+		"@woocommerce/settings-editor": "^0.1.0",
 		"@wordpress/hooks": "^4.8.0",
 		"@wordpress/i18n": "^5.8.0"
 	},
 	"devDependencies": {
-		"@woocommerce/dependency-extraction-webpack-plugin": "^3.0.1",
+		"@woocommerce/dependency-extraction-webpack-plugin": "^3.1.0",
 		"@woocommerce/eslint-plugin": "^2.3.0",
-		"@wordpress/scripts": "^24.6.0"
+		"@wordpress/scripts": "^30.14.0"
 	}
 }
