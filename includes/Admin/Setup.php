@@ -65,10 +65,8 @@ class Setup {
 	 * @since 1.0.0
 	 */
 	public function register_scripts() {
-		error_log('register_scripts called on page: ' . $_SERVER['REQUEST_URI']);
-
 		// Only load on WooCommerce admin pages
-		if ( !is_admin() || ! class_exists( 'WooCommerce' ) ) {
+		if ( ! is_admin() || ! class_exists( 'WooCommerce' ) ) {
 			return;
 		}
 
@@ -81,9 +79,6 @@ class Setup {
 			'version'      => filemtime( $script_path ),
 		);
 		$script_url        = plugins_url( $script_path, MAIN_PLUGIN_FILE );
-
-		error_log('Registering script with URL: ' . $script_url);
-		error_log('Script dependencies: ' . print_r($script_asset['dependencies'], true));
 
 		wp_register_script(
 			'settings-tester',
